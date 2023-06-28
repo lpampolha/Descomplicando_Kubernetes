@@ -4,8 +4,9 @@ metadata:
   labels:
     app: nginx-deployment
   name: nginx-deployment
+  namespace: giropops
 spec:
-  replicas: 3
+  replicas: 10
   selector:
     matchLabels:
       app: nginx-deployment
@@ -16,7 +17,7 @@ spec:
         app: nginx-deployment
     spec:
       containers:
-      - image: nginx
+      - image: nginx:1.16.0
         name: nginx
         resources:
           limits:
